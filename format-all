@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# ~/.git_template.local/hooks/pre-commit
+# format-objc-hook
+# pre-commit hook to check if any unformatted Objective-C files would be committed. Fails the check if so, and provides instructions.
+#
+# Copyright 2015 Square, Inc
+
+et -ex
+IFS=$'\n'
+
+start_date=$(date +"%s")
+
+export CDPATH=""
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+source "$DIR"/lib/common-lib.sh
+
+objc_files=$(all_valid_objc_files_in_repo)
+[ -z "$objc_files" ] && exit 0
+
+echo -e "$objc_files" | xargs -I CMD -P 4 "$DIR"/format-objc-file.sh CMD || fail=yes
+
+[ -z "$fail" ] || exit 1
+
+end_date=$(date +"%s")
+time_diff=$(($end_date-$start_date))
+echo "$(($time_diff / 60)) minutes and $(($time_diff % 60)) seconds to format objc."
+
+exit 0
