@@ -3,8 +3,8 @@ orgin=`git rev-parse --show-toplevel`
 if [ ! -d .git ];
 then exit 0
 fi
-if [ -d .spacecommander ];
-then rm -rf .spacecommander
+if [ -d .format-check ];
+then rm -rf .format-check
 echo "remove all"
 fi
 exit 0
