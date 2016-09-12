@@ -52,20 +52,17 @@ void someFunction() {
 这里推荐一个[简单的模板类的模板](<https://github.com/uxyheaven/XYXcodeTemplate>). 先下载下来, 再修改成你需要的样子, 最后拷贝到Xcode的文件模板文件夹里 
 
 
-```
-/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Folder
-```
+
+	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Folder
+
+
+![image](https://raw.githubusercontent.com/Bupterambition/objc-format-check/master/D070B0F1-B2D8-4503-858A-5FB0E98379E6.png)
 
 
 这样就可以使用了。
 
 
-<div align=center>
-<img src="http://moguimg.u.qiniudn.com/p1/160912/idid_ie3wcobsga2tqm3gmezdambqgayde_3056x2208.png" width = "400" height = "300" alt="" />
-</div >
-
-
-（这里顺便安利下之前写的一个单元测试的[模版](https://github.com/Bupterambition/Kiwi-Template)通过Alcatraz搜索Kiwi-Template进行安装）
+(这里顺便安利下之前写的一个单元测试的[模版](https://github.com/Bupterambition/Kiwi-Template)通过Alcatraz搜索Kiwi-Template进行安装)
 
 
 ## 3.最佳推荐
