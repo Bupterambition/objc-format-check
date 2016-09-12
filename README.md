@@ -50,9 +50,13 @@ void someFunction() {
 
 那么如何制定一个模版呢，从头制作一个模板类有些坑。 我们采用简单的办法, 先拷贝一个模板类， 然后修改成自己需要的样子。
 这里推荐一个[简单的模板类的模板](<https://github.com/uxyheaven/XYXcodeTemplate>). 先下载下来, 再修改成你需要的样子, 最后拷贝到Xcode的文件模板文件夹里 
+
+
 ```
 /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Folder
 ```
+
+
 这样就可以使用了。
 
 
