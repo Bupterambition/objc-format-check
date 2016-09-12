@@ -54,16 +54,18 @@ void someFunction() {
 /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Folder
 ```
 这样就可以使用了。
-<div align=center>
 
+
+<div align=center>
 <img src="http://img.blog.csdn.net/20160411144323366" width = "400" height = "300" alt="" />
 </div >
+
 
 （这里顺便安利下之前写的一个单元测试的[模版](https://github.com/Bupterambition/Kiwi-Template)通过Alcatraz搜索Kiwi-Template进行安装）
 
 
-
 ## 3.最佳推荐
+
 
 以上两种方法操作起来都稍微有点麻烦或是不是太方便，比如使用插件的话每次只能一个文件一个文件的去修改，而且只能装在Xcode上；使用定制模版的话每次需要从模版中创建，似乎有点别扭，并且也只能用在Xcode上。而且两种方法也起不到通知程序员代码风格矫正的作用，那么有没有一种既简单又不限制IDE而且还能通知程序员代码风格不符的方法呢？
 
