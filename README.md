@@ -57,7 +57,7 @@ void someFunction() {
 
 
 <div align=center>
-<img src="http://img.blog.csdn.net/20160411144323366" width = "400" height = "300" alt="" />
+<img src="http://moguimg.u.qiniudn.com/p1/160912/idid_ie3wcobsga2tqm3gmezdambqgayde_3056x2208.png" width = "400" height = "300" alt="" />
 </div >
 
 
@@ -71,7 +71,7 @@ void someFunction() {
 
 这里羞羞地推荐一下自己写的一个工具。具体的使用方法如下：
 
-这里以最近正在写的[AwesomeCommand](http://gitlab.mogujie.org/payfront/AwesomeCommand.git)为例,首先打开工程目录，例如我的目录是下面这样
+这里以最近正在写的[AwesomeCommand](https://github.com/Bupterambition/AwesomeCommand)为例,首先打开工程目录，例如我的目录是下面这样
 <div align=center>
 <img src="https://github.com/Bupterambition/UIImage-Categories/blob/master/pic1.png?raw=true" width = "400" height = "300" alt="" />
 </div>
