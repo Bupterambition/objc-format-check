@@ -121,7 +121,7 @@ BreakConstructorInitializersBeforeComma: false
 那么这样风格的代码
 
 ```objc
-   int f() { return 0; }
+int f() { return 0; }
 ```
 
 将是不允许的，
@@ -130,8 +130,8 @@ BreakConstructorInitializersBeforeComma: false
 ```objc
 
 int f() {
-    	return 0;
-	}
+    return 0;
+}
 	
 ```
 
