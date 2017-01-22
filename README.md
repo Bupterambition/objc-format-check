@@ -9,7 +9,7 @@
 
 记得去年在某度的时候,每次苦逼地搬完砖提交代码的时候，都会有一个代码风格校验的审查，如果没有通过规则的话是提交不上去的，并且还会给出相应的警告。比如下面代码
 
-```
+```objc
 @property(nonatomic,strong)MGJAwesomeCommand *awesomeCMD;
 if(sth.){xxx;return;}
 
@@ -38,7 +38,7 @@ void someFunction() {
 
 团队内部可以设置类的代码组织结构, 例如ViewController类可以按照以下顺序来组织代码结构：
 
-```
+```objc
 #pragma mark - def
 #pragma mark - override
 #pragma mark - api
@@ -79,13 +79,8 @@ void someFunction() {
 
 然后打开终端执行命令
 
-    curl -o format-check -ssl https://github.com/Bupterambition/objc-format-check/blob/master/format-check?raw=true
-    
-下载完毕后执行 
-
-	bash format-check
-	
-	
+    curl -ssl https://raw.githubusercontent.com/Bupterambition/objc-format-check/master/format-check.sh|bash
+    	
 这样就全部搞定了。那么上面操作具体做了什么呢，其实很简单。
 
 首先format-check会clone下来一个[工具](https://github.com/Bupterambition/objc-format-check)（这里参考了Space Commander）放在.format-check目录，然后执行我们的工具。工具主要干了两件事。
@@ -94,8 +89,8 @@ void someFunction() {
 在当前目录下添加了.clang-format文件，这个文件主要是做什么的呢?
 其主要是设定了代码的一些风格.
 
-```
-Language:        Cpp
+```objc
+Language: Cpp
 AccessModifierOffset: -1
 ConstructorInitializerIndentWidth: 4
 SortIncludes: false
@@ -125,13 +120,22 @@ BreakConstructorInitializersBeforeComma: false
 	AllowShortFunctionsOnASingleLine:false
 那么这样风格的代码
 
-	int f() { return 0; }
+```objc
+   int f() { return 0; }
+```
+
 将是不允许的，
 需要改成这样的才能通过规则
 
-	int f() {
+```objc
+
+int f() {
     	return 0;
 	}
+	
+```
+
+	
 那么具体效果是什么样呢,如果你commit的代码中有上述风格的代码，那么提交的时候将会这样
 <div align=center>
 <img src="https://github.com/Bupterambition/UIImage-Categories/blob/master/pic3.png?raw=true" width = "400" height = "300" alt="" />
