@@ -37,6 +37,6 @@ function format_objc() {
 }
 
 success=0
-format_objc || (echo -e "\n🔴  您 提 交 的 代 码 风 格 不 符, 请 运行👆 上面👆 指令 修复.\n💔  或 是 您 可 以 使 用 git commit --no-verify 强 制 跳 过" && success=1)
+format_objc || (echo -e "\n🔴  您 提 交 的 代 码 风 格 不 符, 请 Git根目录 下 运行👆 上面👆 指令 修复.\n💔  或 是 您 可 以 使 用 git commit --no-verify 强 制 跳 过" && success=1)
 
 exit $success
