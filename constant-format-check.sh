@@ -6,5 +6,5 @@ fi
 if [ -d .spacecommander ];
 then exit 0
 fi
-curl -ssl https://raw.githubusercontent.com/Bupterambition/objc-format-check/master/format-check.sh|bash
+curl -ssl https://raw.githubusercontent.com/Bupterambition/objc-format-check/feature/KEEP/format-check.sh|bash
 exit 0
