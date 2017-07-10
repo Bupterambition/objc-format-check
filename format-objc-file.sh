@@ -5,6 +5,11 @@
 
 export CDPATH=""
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+orgin=`git rev-parse --show-toplevel`
+
+if [[ $DIR != $orgin ]]; then
+	cd $orgin
+fi
 
 if [ ! -e ".clang-format" ]; then
 	echo "Couldn't find .clang-format file, unable to format files. Please setup this repo by running the setup-repo.sh script from your repo's top level."
