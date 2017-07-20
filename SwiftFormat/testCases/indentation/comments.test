@@ -1,0 +1,33 @@
+class DownloadManager {
+
+    class var sharedManager : DownloadManager {
+        return _sharedManager
+    }
+
+    func startDownloading() {
+
+        // let timeoutInterval = 60.0
+   // let downloadInterval = 60.0
+        //
+
+        // // inform the user that the download failed.
+    // }
+}
+}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+class DownloadManager {
+
+    class var sharedManager : DownloadManager {
+        return _sharedManager
+    }
+
+    func startDownloading() {
+
+        // let timeoutInterval = 60.0
+   // let downloadInterval = 60.0
+        //
+
+        // // inform the user that the download failed.
+    // }
+    }
+}

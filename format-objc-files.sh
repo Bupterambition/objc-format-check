@@ -33,7 +33,13 @@ fi
 
 function format_objc() {
   for file in $objc_files; do
-	$("$DIR"/format-objc-file.sh "$file")
+  	FILE=$file;
+  	if [ "${FILE#*.}" == "swift" ]
+    then
+        python "$DIR"/SwiftFormat/format.py --file "$file" --output "$file"
+    else
+    	$("$DIR"/format-objc-file.sh "$file")
+    fi
 	echo "Formatted $file"
 	if [ "$stage_flag" -eq 1 ]; then
 		$(git add "$file")
