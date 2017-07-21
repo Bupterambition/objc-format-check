@@ -19,15 +19,21 @@ objc_files=$(objc_files_to_format "$1")
 function format_objc() {
   success=0
   for file in $objc_files; do
-    difference=$("$DIR"/format-objc-file-dry-run.sh "$file" | diff "$file" - | wc -l)
-	
-    if [ $difference -gt 0 ]; then
-        if [ $success -eq 0 ]; then
+    FILE=$file;
+    if [ "${FILE#*.}" == "swift" ]
+    then
+        python "$DIR"/SwiftFormat/format.py --file "$file" --output "$file"
+    else
+        difference=$("$DIR"/format-objc-file-dry-run.sh "$file" | diff "$file" - | wc -l)
+  
+        if [ $difference -gt 0 ]; then
+          if [ $success -eq 0 ]; then
             echo -e "🚸 Format and stage individual files:"
+          fi
+          # This is what the dev can run to fixup an individual file
+          echo "\"$DIR\"/format-objc-file.sh '$file' && git add '$file';"
+          success=1
         fi
-    	# This is what the dev can run to fixup an individual file
-    	echo "\"$DIR\"/format-objc-file.sh '$file' && git add '$file';"
-    	success=1
     fi
   done
   if [ $success -gt 0 ]; then
