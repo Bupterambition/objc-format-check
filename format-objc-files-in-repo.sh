@@ -14,8 +14,15 @@ source "$DIR"/lib/common-lib.sh
 
 objc_files=$(all_valid_objc_files_in_repo)
 [ -z "$objc_files" ] && exit 0
-
-echo -e "$objc_files" | xargs -I CMD -P 4 "$DIR"/format-objc-file.sh CMD || fail=yes
+for file in $objc_files; do
+    FILE=$file;
+    if [ "${FILE#*.}" != "swift" ]
+    then
+        "$DIR"/format-objc-file.sh "$file" || fail=yes
+    else
+    	python "$DIR"/SwiftFormat/format.py --file "$file" --output "$file"
+    fi
+ done
 
 [ -z "$fail" ] || exit 1
 
