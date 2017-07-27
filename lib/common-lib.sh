@@ -28,7 +28,7 @@ function objc_files_to_format() {
 	optional_base_sha="$1"
 	directories_to_check
 	# optional_base_sha is intentionally unescaped so that it will not appear as empty quotes.
-	files=$(git diff --cached --name-only $optional_base_sha --diff-filter=ACM -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' -e '\.swift$')
+	files=$(git diff --cached --name-only $optional_base_sha --diff-filter=ACM -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' )
 	directories_to_ignore
 	echo "$files" | grep -v 'Pods/' | grep -v 'Carthage/' | egrep -v '\.framework' >&1
 }
@@ -37,7 +37,7 @@ function no_cache_objc_files_to_format() {
 	optional_base_sha="$1"
 	directories_to_check
 	# optional_base_sha is intentionally unescaped so that it will not appear as empty quotes.
-	files=$(git diff --name-only $optional_base_sha --diff-filter=ACM -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' -e '\.swift$')
+	files=$(git diff --name-only $optional_base_sha --diff-filter=ACM -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' )
 	directories_to_ignore
 	echo "$files" | grep -v 'Pods/' | grep -v 'Carthage/' | egrep -v '\.framework' >&1
 }
@@ -46,7 +46,7 @@ function no_cache_objc_files_to_format() {
 # If .formatting-directory-ignore exists, then directories specified in .formatting-directory-ignore will be excluded (see directories_to_ignore). 
 function all_valid_objc_files_in_repo() {
 	directories_to_check
-	files=$(git ls-tree --name-only --full-tree -r HEAD -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' -e '\.swift$')
+	files=$(git ls-tree --name-only --full-tree -r HEAD -- $locations_to_diff | grep -e '\.m$' -e '\.mm$' -e '\.h$' -e '\.hh$' -e '\.java$' )
 	directories_to_ignore
 	echo "$files" | grep -v 'Pods/' | grep -v 'Carthage/' | egrep -v '\.framework' >&1
 }
