@@ -47,10 +47,10 @@ function ensure_hook_is_installed() {
 }
 
 function ensure_git_ignores_clang_format_file() {
-#   grep -q ".clang-format" ".gitignore"
-#   if [ $? -gt 0 ]; then
-#     echo ".clang-format" >> ".gitignore"
-#   fi
+  grep -q ".clang-format" ".gitignore"
+  if [ $? -gt 0 ]; then
+    echo ".clang-format" >> ".gitignore"
+  fi
 }
 
 function symlink_clang_format() {
